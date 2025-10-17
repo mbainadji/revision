@@ -14,6 +14,7 @@
         <div class="card shadow">
           <div class="card-header text-center">
             <h2>Connexion ICT4D L2</h2>
+            <div id="selectedOption" style="margin-top:10px;font-size:1.2em;color:#007bff;font-weight:500;"></div>
           </div>
           <div class="card-body">
             <form id="loginForm" onsubmit="return false;">
@@ -32,7 +33,7 @@
                 <select class="form-select" id="option" required>
                   <option value="">Sélectionnez votre option</option>
                   <option value="cybersecurite">Cybersécurité</option>
-                  <option value="cybersecurite">Reseau</option>
+                  <option value="reseau">Réseau</option>
                   <option value="genie_logiciel">Génie Logiciel</option>
                 </select>
               </div>
@@ -56,5 +57,22 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Récupère le paramètre option de l'URL
+    function getOptionFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('option');
+    }
+    // Affiche l'option sélectionnée et sélectionne le bon élément dans le select
+    const option = getOptionFromURL();
+    if(option) {
+      let label = '';
+      if(option === 'cybersecurite') label = 'Cybersécurité';
+      else if(option === 'reseau') label = 'Réseau';
+      else if(option === 'genie_logiciel') label = 'Génie Logiciel';
+      document.getElementById('selectedOption').textContent = 'Option choisie : ' + label;
+      document.getElementById('option').value = option;
+    }
+  </script>
 </body>
 </html>
