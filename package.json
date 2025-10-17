@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "build": "rm -rf public/* && mkdir -p public && cp -r views/* public/ && cp -r public/css public/css || true",
+    "build": "rm -rf public/* && mkdir -p public/css && cp public/index.html public/login.html public/css/style.css public/ || true",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d public"
   },
