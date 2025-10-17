@@ -15,8 +15,8 @@ Site de révision pour les étudiants d'ICT4D L2, permettant aux étudiants de s
 
 1. Cloner le repository :
 ```bash
-git clone <votre-repo-url>
-cd revisions
+    git clone https://github.com/mbainadji/revision.git
+    cd revision
 ```
 
 2. Installer les dépendances :
